@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        
+        <title>YouNote</title>
+    </head>
+
+    <body id="home">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a href="index.html" class="navbar-brand float-left" ><i class="fas fa-home"></i> YouNote</a>
+            
+            <div class="container">
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <a href="about.html" class="navbar-brand float-right text-success"><i class="far fa-address-card"></i> About Us</a>
+        </nav>
+     
+        <!-- HOME SECTION -->
+        <header id="home-section">
+            <div class="dark-overlay">
+                <div class="home-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 align-middle d-lg-block">
+                                <div class="card bg-success text-center card-form" id="urlpage">
+                                    <div class="card-body">
+                                         <h2><strong><i style="color: red; font-size:5rem;" class="fab fa-youtube h1"></i></strong></h2>
+                                         <p>Please enter the video URL</p>
+                                         <form>
+                                             <div class="form-group">
+                                                 <input id="videoUrl" type="text" class="form-control form-control-lg" placeholder="Video URL:">
+                                             </div>
+                                            <a href="" id="urlBtn" class="btn btn-outline-light btn-block">Go to Video & Notepad</a>
+                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-none d-lg-block" >
+                                <h1 class="display-4 text-center"><img style="height:250px; width:300px"src="img/younote_logo.png"></h1>
+                                
+                                <div class="d-flex flex-row mb-3">
+                                    <div class="pl-4 align-self-start">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="pl-4 align-self-end">
+                                        1. Search the video on YouTube
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row mb-3">
+                                    <div class="pl-4 align-self-start">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="pl-4 align-self-end">
+                                        2. Copy the URL from the YouTube and Paste the link in "Video URL"
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div class="pl-4 align-self-start">
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="pl-4 align-self-end">
+                                        3. Press "Go to Video & Notepad"!
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+       
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="./js/index.js"></script>
+   
+    </body>
+</html>

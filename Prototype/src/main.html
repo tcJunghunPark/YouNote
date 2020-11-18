@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  
+        <title>YouNote</title>
+    </head>
+
+    <body id="home">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <!-- NAVBAR IN MAIN PAGE-->
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a href="index.html" class="navbar-brand float-left" ><i class="fas fa-home"></i> YouNote |</a>
+            <div class="navbar-brand">Note Title : </div> <div id="noteTitle" class=" navbar-brand text-primary">Untitled</div>
+            <div class="container">
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">    
+                            <a href="#newNoteModal" class="nav-link" data-toggle="modal" data-target="#newNoteModal"><i class="far fa-folder-open"></i> New Note</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#openNoteModal" id="opennote" data-toggle="modal" data-target="#openNoteModal" class="nav-link"><i class="far fa-folder-open"></i> Open Note</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" id="saveNote" class="nav-link" data-toggle="modal" ><i class="far fa-save"></i> Save Note</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#watchNewVideoModal" id="watchNewVideo" data-toggle="modal" data-target="#watchNewVideoModal" class="nav-link"> <i class="fas fa-video"></i> Watch New Video</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#timestampModal" id="timestamp" data-toggle="modal" data-target="#timestampModal" class="nav-link"><i class="fas fa-stopwatch"></i> Add Time Stamp</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="#create-head-section" class="nav-link"><i class="fas fa-code"></i> Code Block</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#"  class="nav-link"><i class="fab fa-youtube"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-tv"></i> Resize</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+     
+
+        <!-- MAIN SECTION -->
+    
+        <section class="content">
+            <div class="cell a" >
+                <div id="player">
+
+                </div>    
+            </div>
+            
+            <div class="cell b">
+                      <script src="./ckeditor/ckeditor.js"></script>
+                      <textarea id="mytextarea" name="mytextarea">
+                        
+                      </textarea>
+            </div>
+        </section>
+        
+
+        <!-- NEW NOTE MODAL-->
+        <div class="modal fade text-dark" id="newNoteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <h1 class="display-8 text-center p-3"><strong>New Note</strong></h1>
+                    <div class="modal-videoURLs">
+                        <div id="inputNewUrl" class="d-flex flex-row">
+                            <div class="modal-body">
+                                <form>
+                                  <div class="form-group">
+                                    <label class="col-form-label">This action will clear the NOTE section!</label>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="newNoteBtn">Create New Note</button>
+                        <a href="" id="cancel-newNote" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SAVE NOTE MODAL-->
+        <div class="modal fade text-dark" id="saveNoteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <h1 class="display-8 text-center p-3"><strong>Save Note</strong></h1>
+                    <div class="modal-videoURLs">
+                        <div id="inputNewUrl" class="d-flex flex-row">
+                            <div class="modal-body">
+                                <form>
+                                  <div class="form-group">
+                                    <label class="col-form-label">Enter a title for the note</label>
+                                    <input type="text" class="form-control" id="saveNoteInput" placeholder="Title name is required">
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="saveNoteBtn">Save Note</button>
+                        <a href="" id="cancel-saveNote" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- NEW YOUTUBE VIDEO MODAL-->
+
+        <div class="modal fade text-dark" id="watchNewVideoModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <h1 class="display-8 text-center p-3"><strong>Watch New Video</strong></h1>
+                    <p style="margin-left: 7%;">- If you click "cancel" button, current playing video remains </p>
+                    <p style="margin-left: 7%; margin-top: -2%;">  on the video section</p>
+                    
+                    <div class="modal-videoURLs">
+                        <div id="inputNewUrl" class="d-flex flex-row">
+                            <div class="modal-body">
+                                <form>
+                                  <div class="form-group">
+                                    <label for="urlInput" class="col-form-label">Enter a new Youtube video URL:</label>
+                                    <input type="text" class="form-control" id="urlInput" placeholder="Youtube URL is required">
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="newVideoURLBtn">Set new video</button>
+                        <a href="" id="cancel-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- OpenNote modal-->
+        <div class="modal fade text-dark" id="openNoteModal">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <h1 class="display-8 text-center p-3"><strong>Open Note</strong></h1>
+                    
+                        <tr>
+                            <!-- <td><div class="ml-4" id = "timeurl" > time</div></td>
+                            <td><input type = "text" id = "explanation" size = "35"></td> -->
+                        </tr>
+                  
+                    <div class="modal-body">
+                        <div id="opnDiv"></div>
+                    </div>
+                    
+     
+                <div class="modal-footer">
+                    <a href="" id="cancel-opn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+
+         <!-- TIMESTAMP MODAL-->
+
+        <div class="modal fade text-dark" id="timestampModal">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <h1 class="display-8 text-center p-3"><strong>Time Stamp</strong></h1>
+                    <p style="margin-left: 7%;">- Write short description about the time stamp</p>
+                    <p style="margin-left: 7%; margin-top: -2%;">- Click Save Timestamp button to record timestamp</p>
+                    <p style="margin-left: 7%;  margin-top: -2%;">- Click the time to start the video at that moment</p>
+                    
+                        <tr>
+                            <!-- <td><div class="ml-4" id = "timeurl" > time</div></td>
+                            <td><input type = "text" id = "explanation" size = "35"></td> -->
+                        </tr>
+                  
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group" id = "timestampTable">
+                              <label for="tsTitle" >Current Timestamp is <b>[<span id = "timeurl" >time</span>s]</b></label>
+                              <input type="text" class="form-control" id="tsTitle" placeholder="Timestamp description.                   e.g., hashTable">
+                            </div>
+                          </form>
+
+                        <div id="tsDiv"></div>
+                    </div>
+                    
+     
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveTS" ">Save Timestamp</button>
+                    <a href="" id="cancel-ts" type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            </div>
+        </div>
+   
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="./js/main.js"></script>
+       
+    </body>
+</html>

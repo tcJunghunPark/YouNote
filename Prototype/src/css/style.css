@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root{
+    --bg-color:#7DB46CFF;
+    --font-color:#E7EBE0FF;
+    --primary-color:#ABD6DFFF;
+    --dark-overlay:rgba(16, 39, 22, 0.7);
+    --icon-size: 30px;
+}
+
+* {
+    box-sizing: border-box;
+    
+}
+
+html{
+    margin:0;
+    padding:0;
+}
+body{
+    margin: 0;
+    height: 100vh;
+}
+
+
+body#home{
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+.container{
+    max-width: 10000px;
+}
+.navbar{
+    border-bottom: var(--primary-color) 3px solid;
+    opacity: 0.8;
+}
+
+#home-section{
+
+    min-height: 700px;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.row{
+    max-height:600px;
+}
+
+.column {
+    float:left;
+    width:50%;
+    padding: 10px;
+    height:800px;
+    background-color: blue;
+}
+.dark-overlay{
+    background-color: var(--dark-overlay);
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:100%;
+}
+
+#player, #txtDiv{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.home-inner{
+    padding-top:150px;
+    margin:0;
+}
+
+.content-inner{
+    padding-top:60px;
+}
+
+.card-form{
+    opacity:0.8;
+    height:100%;
+}
+
+
+#urlpage{
+    padding-top: 15%;
+}
+
+#video-link-icon{
+    color: var(--primary-color);
+    background-color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: var(--icon-size);
+}
+
+#explore-section .fa,
+#share-section .fa{
+    color: #fff;
+    background: #333;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: var(--icon-size);
+}
+
+#create-section .fa{
+    color: #fff;
+    background: #333;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.VideoURL {
+    margin-bottom: 1rem;
+    
+   
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-top: 8vh;
+}
+.cell{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    padding: 2px;
+    border: 1px solid;
+}
+
+.gutter {
+    height: 100%;
+    background: var(--primary-color);
+    cursor:col-resize;
+}
+
+#ytplayer{
+    margin:0;
+    padding:0;
+}
+
+#txtDiv{
+    height:91vh;
+    width:100%;
+    overflow: scroll;
+    text-decoration: none;
+}
+
+#txtDiv::first-line {
+    font-size: 3rem;
+    background-color: var(--primary-color);
+}
+
+.video-list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+img{
+    height: 10vh;
+    padding-left:10px;
+    width: 17vh;
+}
+
+pre {
+    white-space: pre-wrap;
+    overflow: auto;
+}
